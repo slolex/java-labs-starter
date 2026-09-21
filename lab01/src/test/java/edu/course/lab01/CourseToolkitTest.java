@@ -76,4 +76,26 @@ class CourseToolkitTest {
     public void returnsIllegalArgumentExceptionForNullPalindrome() {
         assertThrows(IllegalArgumentException.class, () -> CourseToolkit.isPalindrome(null));
     }
+
+    @Test
+    public void returnsCorrectAverageForPositiveValues(){
+        int[] values = {2, 4, 6, 8};
+        double result = CourseToolkit.average(values);
+        assertEquals(5.0, result, 0.001);
+
+    }
+    @Test
+    public void returnsCorrectAverageForNegativeValues(){
+        int[] values = {-5, 0, 5, -10};
+        double result = CourseToolkit.average(values);
+        assertEquals(-2.5, result, 0.001);
+
+    }
+
+    @Test
+    public void throwIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,() -> CourseToolkit.average(new int[]{}));
+        assertThrows(IllegalArgumentException.class,() -> CourseToolkit.average(null));
+    }
+
 }
