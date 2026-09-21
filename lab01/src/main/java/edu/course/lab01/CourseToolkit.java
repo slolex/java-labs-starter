@@ -32,7 +32,6 @@ public final class CourseToolkit {
         if (text == null) {
             throw new IllegalArgumentException("Текст пустойй");
         }
-        int check = 0;
         int left = 0;
         int right = (text.length() -1);
         while (left < right) {
@@ -46,4 +45,19 @@ public final class CourseToolkit {
         }
         return true;
     }
+    public static double average(int[] values) {
+        if (values == null) {
+            throw new IllegalArgumentException("Массив пуст или равен null");
+        }
+        if (values.length == 0) {
+            throw new IllegalArgumentException("Массив пуст или равен null");
+        }
+        double sum = 0;
+        for (int i = 0; i < values.length; i = i + 1) {
+            sum = sum + values[i];
+        }
+        return (sum / values.length);
+    }
+
+
 }
